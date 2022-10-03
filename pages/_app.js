@@ -1,7 +1,8 @@
+import GridTable from "../components/organisms/GridTable";
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return <div>Test</div>
+  return <GridTable />
 }
 
 export default MyApp
