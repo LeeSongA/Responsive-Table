@@ -1,11 +1,12 @@
-import S from './style';
+import { ReactElement } from "react";
+import S from "./style";
 
 type TableCellProps = {
   key: string;
-  children: any;
+  children: ReactElement | string;
 };
 
-const TableCell = ({key, children, ...rest}: TableCellProps) => {
+const TableCell = ({ key, children, ...rest }: TableCellProps) => {
   return (
     <S.Wrapper key={key}>
       {children}

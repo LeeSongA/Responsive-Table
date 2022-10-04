@@ -10,7 +10,7 @@ type TableRowProps = {
   rowItem: RowItem;
 };
 
-const TableRow = ({rowItem}: TableRowProps) => {
+const TableRow = ({ rowItem }: TableRowProps) => {
   return (
     <>
       {Object.values(rowItem).map((tableCell, i) => <TableCell key={`row-${i}`}>{tableCell}</TableCell>)}

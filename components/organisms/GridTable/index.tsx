@@ -1,7 +1,7 @@
-import TableHead from 'components/molecules/TableHead';
-import TableRow from 'components/molecules/TableRow';
+import TableHead from "components/molecules/TableHead";
+import TableRow from "components/molecules/TableRow";
 
-import S from './style';
+import S from "./style";
 
 type ColumnItem = {
   key: string;
@@ -27,7 +27,7 @@ const columnList = [
   { key: "phone", title: "Phone", dataIndex: "phone", sortable: true },
 ];
 
-const rowList = [{id: "1", name: "lee", phone: "phone"}, {id: "2", name: "kim", phone: "phone"}, {id: "3", name: "him", phone: "phone"}];
+const rowList = [{ id: "1", name: "lee", phone: "phone" }, { id: "2", name: "kim", phone: "phone" }, { id: "3", name: "him", phone: "phone" }];
 
 const GridTable = ({}: GridTableProps) => {
   return (
