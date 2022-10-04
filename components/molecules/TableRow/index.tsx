@@ -13,7 +13,7 @@ type TableRowProps = {
 const TableRow = ({rowItem}: TableRowProps) => {
   return (
     <>
-      {Object.values(rowItem).map((cell, i) => <TableCell key={`row-${i}`}>{cell}</TableCell>)}
+      {Object.values(rowItem).map((tableCell, i) => <TableCell key={`row-${i}`}>{tableCell}</TableCell>)}
     </>
   )
 };
