@@ -1,3 +1,5 @@
+import ColumnCell from "components/atoms/ColumnCell";
+
 import S from "./style";
 
 type ColumnItem = {
@@ -13,9 +15,9 @@ type TableHeadProps = {
 
 const TableHead = ({ columnList }: TableHeadProps) => {
   return (
-    <>
-      {columnList.map((columnItem, i) => <S.Bold key={columnItem.key}>{columnItem.title}</S.Bold>)}
-    </>
+    <S.TableRow>
+      {columnList.map((columnItem, i) => <ColumnCell key={columnItem.key} sortable={columnItem.sortable}>{columnItem.title}</ColumnCell>)}
+    </S.TableRow>
   )
 };
 
