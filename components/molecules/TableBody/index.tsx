@@ -30,9 +30,12 @@ const TableBody = (props: TableBodyProps) => {
   return (
     <>
       {rowList.map((rowItem, i) => (
-        <S.TableRow key={columnList[i].dataIndex} onClick={() => onClickRow(i)}>
+        // <S.TableRow key={columnList[i].dataIndex} onClick={() => onClickRow(i)}>
+        //   {Object.values(rowItem).map((tableCell, i) => <RowCell key={`row-${i}`}>{tableCell}</RowCell>)}
+        // </S.TableRow>
+        <>
           {Object.values(rowItem).map((tableCell, i) => <RowCell key={`row-${i}`}>{tableCell}</RowCell>)}
-        </S.TableRow>
+        </>
       ))}
     </>
   )

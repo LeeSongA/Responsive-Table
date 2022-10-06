@@ -15,9 +15,9 @@ type TableHeadProps = {
 
 const TableHead = ({ columnList }: TableHeadProps) => {
   return (
-    <S.TableRow>
+    <>
       {columnList.map((columnItem, i) => <ColumnCell key={columnItem.key} sortable={columnItem.sortable}>{columnItem.title}</ColumnCell>)}
-    </S.TableRow>
+    </>
   )
 };
 
