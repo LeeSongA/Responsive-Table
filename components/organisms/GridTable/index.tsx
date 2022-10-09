@@ -2,6 +2,7 @@ import TableRow from "components/molecules/TableRow";
 import TableHead from "components/molecules/TableHead";
 
 import S from "./style";
+import { useState } from "react";
 
 type ColumnItem = {
   key: string;
@@ -14,6 +15,11 @@ type RowItem = {
   id: string;
   name: string;
   phone: string;
+}
+
+type SortOption = {
+  dataIndex: string | null;
+  isAscending: boolean;
 }
 
 type GridTableProps = {
@@ -38,14 +44,18 @@ const rowList = [
 ];
 
 const GridTable = ({}: GridTableProps) => {
+  const [sortOption, setSortOption] = useState<SortOption>({ dataIndex: null, isAscending: false });
+
   // TODO: row 클릭 시 페이지 이동 등 이벤트 실행
   const onClickRow = (rowIndex: number) => {
     console.log(`click row ${rowIndex}`);
   }
 
+  console.log(sortOption);
+
   return (
     <S.Wrapper>
-      <TableHead columnList={columnList} />
+      <TableHead columnList={columnList} setSortOption={setSortOption} />
       {rowList.map((rowItem, i) => <TableRow key={i} rowList={rowItem} onClick={() => onClickRow(i)} />)}
     </S.Wrapper>
   );

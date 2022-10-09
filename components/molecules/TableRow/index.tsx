@@ -17,7 +17,7 @@ const TableRow = (props: TableRowProps) => {
 
   return (
     <>
-      {Object.values(rowList).map((tableCell, i) => <RowCell key={`row-${i}`} onClick={onClick}>{tableCell}</RowCell>)}
+      {Object.values(rowList).map((tableCell, i) => <RowCell key={i} onClick={onClick}>{tableCell}</RowCell>)}
     </>
   )
 };

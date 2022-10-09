@@ -1,4 +1,11 @@
+import { Dispatch, SetStateAction } from "react";
+
 import ColumnCell from "components/atoms/ColumnCell";
+
+type SortOption = {
+  dataIndex: string | null;
+  isAscending: boolean;
+}
 
 type ColumnItem = {
   key: string;
@@ -9,12 +16,15 @@ type ColumnItem = {
 
 type TableHeadProps = {
   columnList: Array<ColumnItem>;
+  setSortOption?: Dispatch<SetStateAction<SortOption>>;
 };
 
-const TableHead = ({ columnList }: TableHeadProps) => {
+const TableHead = (props: TableHeadProps) => {
+  const { columnList, setSortOption } = props;
+
   return (
     <>
-      {columnList.map((columnItem, i) => <ColumnCell key={columnItem.key} sortable={columnItem.sortable}>{columnItem.title}</ColumnCell>)}
+      {columnList.map((columnItem, i) => <ColumnCell key={i} dataIndex={columnItem.dataIndex} sortable={columnItem.sortable} setSortOption={setSortOption}>{columnItem.title}</ColumnCell>)}
     </>
   )
 };
