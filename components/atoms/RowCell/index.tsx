@@ -4,6 +4,7 @@ import S from './style';
 
 type RowCellProps = {
   children: ReactElement | string;
+  onClick: () => void;
 };
 
 const RowCell = (props: RowCellProps) => {
