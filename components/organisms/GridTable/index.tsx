@@ -1,26 +1,10 @@
+import { useState } from "react";
+
 import TableRow from "components/molecules/TableRow";
 import TableHead from "components/molecules/TableHead";
 
+import { ColumnItem, RowItem, SortOption } from "types/table";
 import S from "./style";
-import { useState } from "react";
-
-type ColumnItem = {
-  key: string;
-  title: string;
-  dataIndex: string;
-  sortable: boolean;
-}
-
-type RowItem = {
-  id: string;
-  name: string;
-  phone: string;
-}
-
-type SortOption = {
-  dataIndex: string | null;
-  isAscending: boolean;
-}
 
 type GridTableProps = {
   columnList: Array<ColumnItem>;

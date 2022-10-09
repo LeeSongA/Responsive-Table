@@ -2,17 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 import ColumnCell from "components/atoms/ColumnCell";
 
-type SortOption = {
-  dataIndex: string | null;
-  isAscending: boolean;
-}
-
-type ColumnItem = {
-  key: string;
-  title: string;
-  dataIndex: string;
-  sortable: boolean;
-}
+import { ColumnItem, SortOption } from "types/table";
 
 type TableHeadProps = {
   columnList: Array<ColumnItem>;

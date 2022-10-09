@@ -1,22 +1,12 @@
+import { useState } from "react";
+
 import Checkbox from "components/atoms/Checkbox";
 import TableRow from "components/molecules/TableRow";
 import TableHead from "components/molecules/TableHead";
 
+import { ColumnItem, RowItem } from "types/table";
+
 import S from "./style";
-import { useState } from "react";
-
-type ColumnItem = {
-  key: string;
-  title: string;
-  dataIndex: string;
-  sortable: boolean;
-}
-
-type RowItem = {
-  id: string;
-  name: string;
-  phone: string;
-}
 
 type CheckableGridTableProps = {
   columnList: Array<ColumnItem>;

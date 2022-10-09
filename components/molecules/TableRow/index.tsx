@@ -1,10 +1,6 @@
 import RowCell from "components/atoms/RowCell";
 
-type RowItem = {
-  id: string;
-  name: string;
-  phone: string;
-}
+import { RowItem } from "types/table";
 
 type TableRowProps = {
   rowList: RowItem;

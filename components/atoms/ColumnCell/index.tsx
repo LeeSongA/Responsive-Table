@@ -2,12 +2,8 @@ import { ReactElement, Dispatch, SetStateAction } from "react";
 
 import SortIcon from "public/images/sort-icon.svg";
 
+import { SortOption } from "types/table";
 import S from './style';
-
-type SortOption = {
-  dataIndex: string | null;
-  isAscending: boolean;
-}
 
 // NOTE: useState 상태 변경 함수 타입 Dispatch<SetStateAction<StateType>>
 type ColumnCellProps = {
