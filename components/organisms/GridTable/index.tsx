@@ -1,4 +1,4 @@
-import TableBody from "components/molecules/TableBody";
+import TableRow from "components/molecules/TableRow";
 import TableHead from "components/molecules/TableHead";
 
 import S from "./style";
@@ -29,7 +29,7 @@ const columnList = [
 
 const rowList = [
   { id: "1", name: "lee", phone: "phone" }, 
-  { id: "2", name: "kim", phone: "phone" }, 
+  { id: "2", name: "kim1111111111111111111", phone: "phone" }, 
   { id: "3", name: "him", phone: "phone" },
 ];
 
@@ -37,7 +37,7 @@ const GridTable = ({}: GridTableProps) => {
   return (
     <S.Wrapper>
       <TableHead columnList={columnList} />
-      <TableBody columnList={columnList} rowList={rowList} />
+      {rowList.map((rowItem, rowIndex) => <TableRow key={rowIndex} rowList={rowItem} rowIndex={rowIndex} />)}
     </S.Wrapper>
   );
 };
