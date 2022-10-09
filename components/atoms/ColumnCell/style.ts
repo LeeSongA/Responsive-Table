@@ -5,7 +5,7 @@ const S = {
     display: flex;
     align-items: center;
     padding: 0 12px;
-    // cursor
+    cursor: ${(props) => props.sortable && "pointer"}
   `,
   TableData: styled.span`
     margin-right: 10px;
