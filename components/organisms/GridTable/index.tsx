@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import TableRow from "components/molecules/TableRow";
 import TableHead from "components/molecules/TableHead";
@@ -30,17 +30,25 @@ const rowList = [
 const GridTable = ({}: GridTableProps) => {
   const [sortOption, setSortOption] = useState<SortOption>({ dataIndex: null, isAscending: false });
 
+  // TODO: 백엔드 정렬 데이터 요청
+  const handleSort = () => {
+    console.log(sortOption);
+  }
+
   // TODO: row 클릭 시 페이지 이동 등 이벤트 실행
-  const onClickRow = (rowIndex: number) => {
+  const handleClickRow = (rowIndex: number) => {
     console.log(`click row ${rowIndex}`);
   }
 
-  console.log(sortOption);
+  // NOTE: sortOption 값이 달라지면 정렬 데이터 요청하는 함수 호출
+  useEffect(() => {
+    handleSort();
+  }, [sortOption])
 
   return (
     <S.Wrapper>
       <TableHead columnList={columnList} setSortOption={setSortOption} />
-      {rowList.map((rowItem, i) => <TableRow key={i} rowList={rowItem} onClick={() => onClickRow(i)} />)}
+      {rowList.map((rowItem, i) => <TableRow key={i} rowList={rowItem} onClick={() => handleClickRow(i)} />)}
     </S.Wrapper>
   );
 };
