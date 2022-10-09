@@ -4,7 +4,6 @@ const S = {
   Wrapper: styled.th<{ sortable: boolean }>`
     display: flex;
     align-items: center;
-    height: 40px;
     padding: 0 12px;
     // cursor
   `,
