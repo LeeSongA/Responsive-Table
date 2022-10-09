@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Checkbox from "components/atoms/Checkbox";
 import TableRow from "components/molecules/TableRow";
 import TableHead from "components/molecules/TableHead";
 
-import { ColumnItem, RowItem } from "types/table";
+import { ColumnItem, RowItem, SortOption } from "types/table";
 
 import S from "./style";
 
@@ -30,8 +30,14 @@ const rowList = [
 ];
 
 const CheckableGridTable = ({}: CheckableGridTableProps) => {
+  const [sortOption, setSortOption] = useState<SortOption>({ dataIndex: null, isAscending: false });
   const [checkedIndex, setCheckedIndex] = useState(new Set());
   const rowIndex = new Set(rowList.map((rowItem, i) => i));
+
+  // TODO: 백엔드 정렬 데이터 요청
+  const handleSort = () => {
+    console.log(sortOption);
+  }
 
   // NOTE: 하나의 리스트 선택 이벤트
   const handleCheckRowItem = (rowIndex: number) => {
@@ -48,10 +54,15 @@ const CheckableGridTable = ({}: CheckableGridTableProps) => {
     checkedIndex.size === rowList.length ? setCheckedIndex(new Set()) : setCheckedIndex(rowIndex); 
   }
 
+  // NOTE: sortOption 값이 달라지면 정렬 데이터 요청하는 함수 호출
+  useEffect(() => {
+    handleSort();
+  }, [sortOption])
+
   return (
     <S.Wrapper>
       <S.CheckCell><Checkbox checked={checkedIndex.size === rowList.length} onChange={handleCheckRowList}/></S.CheckCell>
-      <TableHead columnList={columnList} />
+      <TableHead columnList={columnList} setSortOption={setSortOption} />
 
       {rowList.map((rowItem, i) => (
         <>
