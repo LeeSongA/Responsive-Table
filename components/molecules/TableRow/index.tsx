@@ -4,7 +4,7 @@ import { RowItem } from "types/table";
 
 type TableRowProps = {
   rowList: RowItem;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const TableRow = (props: TableRowProps) => {
