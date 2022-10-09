@@ -1,7 +1,5 @@
 import ColumnCell from "components/atoms/ColumnCell";
 
-import S from "./style";
-
 type ColumnItem = {
   key: string;
   title: string;
