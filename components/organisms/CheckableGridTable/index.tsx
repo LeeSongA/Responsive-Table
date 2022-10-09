@@ -34,9 +34,9 @@ const columnList = [
 
 const rowList = [
   { id: "1", email: "test@hutom.io", name: "lee", department: "department", phone: "phone", data: "data" }, 
-  { id: "1", email: "test@hutom.io", name: "lee", department: "department", phone: "phone", data: "data" }, 
-  { id: "1", email: "test@hutom.io", name: "lee", department: "department", phone: "phone", data: "data" }, 
-  { id: "1", email: "test@hutom.io", name: "lee", department: "department", phone: "phone", data: "data" }
+  { id: "1", email: "test@hutom.io", name: "lee", department: "department111111111111111", phone: "phone", data: "data" }, 
+  { id: "1", email: "test@hutom.io", name: "lee", department: "department", phone: "phone1111111111", data: "data" }, 
+  { id: "1", email: "test@hutom.io", name: "lee11111111111111", department: "department", phone: "phone", data: "data" }
 ];
 
 const CheckableGridTable = ({}: CheckableGridTableProps) => {

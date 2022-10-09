@@ -4,7 +4,7 @@ const S = {
   Wrapper: styled.table`
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 200px 1fr 400px 1fr 1fr 150px;
 
     th {
       border-bottom: 1px solid #000000;
