@@ -34,10 +34,15 @@ const rowList = [
 ];
 
 const GridTable = ({}: GridTableProps) => {
+  // TODO: row 클릭 시 선택이 되거나, 페이지 이동 등 이벤트 실행
+  const onClickRow = (rowIndex: number) => {
+    console.log(`click row ${rowIndex}`);
+  }
+
   return (
     <S.Wrapper>
       <TableHead columnList={columnList} />
-      {rowList.map((rowItem, rowIndex) => <TableRow key={rowIndex} rowList={rowItem} rowIndex={rowIndex} />)}
+      {rowList.map((rowItem, i) => <TableRow key={i} rowList={rowItem} onClick={() => onClickRow(i)} />)}
     </S.Wrapper>
   );
 };

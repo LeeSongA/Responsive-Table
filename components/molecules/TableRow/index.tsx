@@ -17,19 +17,16 @@ type RowItem = {
 
 type TableRowProps = {
   rowList: RowItem;
-  rowIndex: number;
+  onClick: () => void;
 };
 
 const TableRow = (props: TableRowProps) => {
-  const { rowList, rowIndex } = props;
-  
-  const onClickRow = (rowIndex: number) => {
-    console.log(`click row ${rowIndex}`);
-  }
+  const { rowList } = props;
+
 
   return (
     <>
-      {Object.values(rowList).map((tableCell, i) => <RowCell key={`${rowIndex}-${i}`} onClick={() => onClickRow(rowIndex)}>{tableCell}</RowCell>)}
+      {Object.values(rowList).map((tableCell, i) => <RowCell key={`row-${i}`}>{tableCell}</RowCell>)}
     </>
   )
 };
